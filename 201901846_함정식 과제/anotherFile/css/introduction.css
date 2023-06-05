@@ -1,0 +1,92 @@
+body{
+    font-family: "G마켓 산스 TTF Medium";
+}
+#wrap{
+    min-width: 1000px;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.container{
+    width: 65%;
+    max-width: 1132px;
+    margin: 0 auto;
+}
+
+.m-divider{
+    width: 40px; 
+    margin: 40px auto 0;
+    border: 1px solid #3f51b5;
+}
+.sec-tit{
+    color:  #3f51b5;
+    font-size: 20px;
+    font-weight: 600;
+}
+.sec-tit::before{
+    content: "•";
+    font-size: 30px;
+    color: #3f51b5;
+}
+header{
+    padding: 28px 3.75%;
+    max-width: 1440px;
+    margin: 0 auto;
+    font-weight: 800;
+}
+header h1{
+    float: left;
+    font-size: 30px;
+}
+
+.motivation-section{
+    margin-top: 20px;
+}
+.motivation-section .one{
+    line-height: 27px;
+    margin-bottom: 10px;
+}
+.motivation-section .two{
+    line-height: 27px;
+}
+.motivation-section p .sub-tit{
+    font-size: 20px;
+    color:  #3f51b5;
+}
+.motivation-section h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color:  #3f51b5;
+}
+.growth-section{
+    margin-top: 40px;
+}
+.growth-section p{
+    line-height: 27px;
+    margin-top: 10px;
+}
+.issue-section{
+    margin-top: 40px;
+}
+.issue-section p{
+    line-height: 27px;
+    margin-top: 10px;
+}
+.project-section{
+    margin-top: 40px;
+}
+.project-section p{
+    line-height: 27px;
+    margin-top: 10px;
+}
+.competence-section{
+    margin-top: 40px;
+}
+.competence-section p{
+    line-height: 27px;
+    margin-top: 10px;
+}
+

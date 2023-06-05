@@ -1,0 +1,111 @@
+﻿
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Jeongsik's Web</title>
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/mystyle.css">
+<script>
+    function refreshPage(){
+        location.reload();
+    }
+</script>
+</head>
+<body>
+<div id="wrap">
+    <header class="clearfix">
+        <h1 class="logo" onclick="refreshPage()" style="cursor: pointer;">Push the Envelope</h1>
+        <nav>
+            <ul class="gnb clearfix">
+                <li><a href="#h1">HOME</a></li>
+                <li><a href="#iam">I AM</a></li>
+                <li><a href="#introduction">SELF-INTRODUCTION</a></li>
+                <li><a href="#vision">VISION</a></li>
+                <li><a href="#futureplan">FUTURE-PLAN</a></li>
+                <li><a href="#survey">SURVEY</a></li>
+            </ul>
+        </nav>
+    </header>
+    <article class="slider">
+        <h2 class="blind">메인비주얼</h2>
+        <img src="./images/datascience.jpg" alt="데이터사이언스관련그림">
+    </article>
+    <div class="content">
+        <section class="display-section">
+            <div class="container clearfix">
+                <h2 id="iam" class="sec-tit">I AM</h2>
+                <p class="desc">
+                    안녕하세요. 데이터사이언스에 관심을 갖고있는 함정식입니다. <br>
+                    저는 공주대학교 소프트웨어학과 3학년에 재학중인 학생입니다. <br>
+                    저의 웹페이지의 제목인 'Push the Envelope'는 저의 모토입니다. <br>
+                    더 나은 성과를 이루기 위해 기존의 한계를 뛰어넘으려 도전하는 태도라는 뜻입니다. <br>
+                    제 웹페이지는 자소서, 관심 기술 및 관련 기업 내용, 퓨쳐 플랜 내용,<br>
+                    평가 웹페이지, 공주대학교 찾아오는 길, 시계로 구성되어 있습니다.<br>
+                    다음으로 소개할 내용은 자소서, 관심 기술 및 관련 기업, 퓨처 플랜입니다. <br>
+                </p>
+            </div>
+        </section>
+        <section class="work-section">
+            <div class="container"></div>
+            <ul class="work-list clearfix">
+                <li>
+                    <a href="./anotherFile/introduction.html" target="_blank">
+                        <div class="info">
+                            <h3 id="introduction">자기소개서</h3>
+                        </div>
+                        <img src="./images/introduction.png" alt="" onclick="openIntroduction()">
+                    </a>
+                </li>
+                <li>
+                    <a href="./anotherFile/vision.html" target="_blank">
+                        <div class="info">
+                            <h3 id="vision">관심 기술과 관련 기업</h3>
+                        </div>
+                        <img src="./images/vision.png" alt="" onclick="openVision()">
+                    </a>
+                </li>
+                <li>
+                    <a href="./anotherFile/futureplan.html" target="_blank">
+                        <div class="info">
+                            <h3 id="futureplan">퓨처 플랜</h3>
+                        </div>
+                        <img src="./images/futureplan.png" alt="" onclick="openFuturePlan()">
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <hr class="m-divider">
+    </div>
+    <footer>
+        <div class="container">
+            <a id="survey" href="./anotherFile/survey.html" target="_blank">웹페이지를 평가해주세요</a><br><br>
+            <p>공주대학교 찾아오는 길</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1161.8406233694943!2d127.15005456152025!3d36.85133129528691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b28c12a18e90f%3A0x95df92b0331c5c65!2z6rO17KO864yA7ZWZ6rWQIOyynOyViOy6oO2NvOyKpA!5e0!3m2!1sko!2skr!4v1685171285366!5m2!1sko!2skr" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>     
+            <div id="clock"></div>
+            <script>
+                var whatday = ['일', '월','화','수','목','금','토'];
+                function refreshTime(){
+                    var hourprefix;
+                    var d = new Date();
+                    var date = d.getFullYear() + '년 ' + (d.getMonth() + 1) + '월 '
+                        + d.getDate() + '일 ' + whatday[d.getDay()] +'요일 ';
+                    var hours = d.getHours();
+                    if (hours < 6) {hourprefix = '새벽 ';}
+                    else if (hours < 9) {hourprefix = '아침 ';}
+                    else if (hours < 12) {hourprefix = '오전 ';}
+                    else if (hours < 18 ) {hourprefix = '오후 ';}
+                    else if (hours < 21 ) {hourprefix = '저녁 ';}
+                    else  {hourprefix = '밤';}
+                    if (hours > 12) hours = hours - 12;
+                    var time = hourprefix + hours + '시 ' + d.getMinutes() 
+                        + '분 ' + d.getSeconds() + '초';
+                    document.getElementById("clock").textContent = date + time ;
+                }
+                var t = setInterval('refreshTime()', 1000);
+            </script>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

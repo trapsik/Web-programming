@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹페이지를 평가해주세요</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/assignmentstyle.css">
+    <script>
+        let canvas;
+        let context;
+        
+        function drawInit(){
+            canvas = document.getElementById("canvas");
+            context = canvas.getContext("2d");
+
+            context.lineWidth = 2;
+            context.strokeStyle = "Black"
+            
+            canvas.addEventListener("mousedown", function(e){down(e)}, false)
+            canvas.addEventListener("mouseup", function(e){up(e)}, false)
+            canvas.addEventListener("mousemove", function(e){move(e)}, false)
+            canvas.addEventListener("mouseout",function(e){out(e)}, false)
+        }
+
+        var startX=0;
+        var startY=0;//마우스의 마지막 포인터 좌표
+        var dragging=false;
+        
+        function draw(curX,curY){
+            context.beginPath();//빈경로만들기
+            context.lineWidth = document.getElementById("inputLineWidth").value;
+            context.strokeStyle = document.getElementById("inputStrokeStyle").value;
+            context.moveTo(startX,startY);//(startX,startY)가 시작점
+            context.lineTo(curX,curY);
+            context.stroke();//경로를 캔버스에 그린다.
+        }
+        function move(e){//마우스 움직일 때
+            if(!dragging) return;//마우스가 눌러지지 않았으면 리턴
+            var curX = e.offsetX;
+            var curY = e.offsetY;
+            draw(curX,curY);
+            startX=curX;
+            startY=curY;
+        }
+        function down(e){//마우스버튼누름
+            startX = e.offsetX;
+            startY = e.offsetY;
+            dragging = true;
+        }
+        function up(e){//눌러진 버튼 놓음
+            dragging = false;
+        }
+        function out(e){
+            dragging = false;
+        }
+        function eraseCanvas(){
+            context.clearRect(0,0,canvas.width,canvas.height);
+            context.beginPath();
+        }
+    </script>
+</head>
+<div id="wrap">
+<body onload="drawInit()">
+    <script>
+        function closeWindow() {
+            window.close();
+        }
+    </script>
+    <header class="clearfix">
+        <h1>해주세요</h1>
+        <p>많은 참여 부탁드려요</p>
+        <p>
+            <audio src="./media/song1.mp3" controls loop></audio><br>
+            여유로운 음악을 준비했습니다.<br>
+            음악을 들으며 여유롭게 평가해주세요!
+        </p>
+    </header>
+    <div class="content">
+    <form action="">
+        <p>학년</p>
+        <fieldset>
+        <label><input type="radio" name="grade" value="1"><span>1학년</span></label>
+        <label><input type="radio" name="grade" value="2"><span>2학년</span></label>
+        <label><input type="radio" name="grade" value="3"><span>3학년</span></label>
+        <label><input type="radio" name="grade" value="4"><span>4학년</span></label>
+        </fieldset>
+        <br><br>
+        <p>성별</p>
+        <fieldset>
+        <label><input type="radio" name="gender" value="m"><span>남</span></label>
+        <label><input type="radio" name="gender" value="w"><span>여</span></label>
+        </fieldset>
+        <br><br>
+        <p>남기고 싶은 말</p>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <br><br>
+        <p>웹페이지를 그림으로 표현해주세요</p>
+        <canvas id="canvas" style="background-color: aliceblue;"
+            width="500" height="300"></canvas>
+        
+        <table>
+        <tr>
+            <td><label for="">선 굵기 : <input type="text" id="inputLineWidth" size="2" value="2"></label></td>
+            <td><label for="">선 색 : <input type="color" id="inputStrokeStyle" ></label></td>
+            <td><input type="button" id="btnErase" value="지우려면 클릭하세요" onclick="eraseCanvas()"></td>
+        </tr>
+        </table>
+        <br><br>
+        <input type="submit" value="평가 완료" onclick="closeWindow()">
+    </form>
+</div>
+</div>
+</body>
+</html>

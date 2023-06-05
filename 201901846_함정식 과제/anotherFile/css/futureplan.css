@@ -1,0 +1,106 @@
+body{
+    font-family: "G마켓 산스 TTF Medium";
+}
+#wrap{
+    min-width: 1000px;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.container{
+    width: 65%;
+    max-width: 1132px;
+    margin: 0 auto;
+}
+
+.m-divider{
+    width: 40px; 
+    margin: 40px auto 0;
+    border: 1px solid #3f51b5;
+}
+.sec-tit{
+    color:  #3f51b5;
+    font-size: 20px;
+    font-weight: 600;
+}
+.sec-tit::before{
+    content: "•";
+    font-size: 30px;
+    color: #3f51b5;
+}
+header{
+    padding: 28px 3.75%;
+    max-width: 1440px;
+    margin: 0 auto;
+    font-weight: 800;
+}
+header h1{
+    float: left;
+    font-size: 30px;
+}
+
+.intro-section{
+    margin-top: 20px;
+}
+.intro-section p{
+    line-height: 27px;
+    margin-bottom: 10px;
+}
+.intro-section ul{
+    list-style: circle;
+}
+.one{
+    margin-top: 10px;
+}
+.one p{
+    line-height: 27px;
+    margin-top: 10px;
+}
+.two{
+    margin-top: 10px;
+}
+.two p{
+    line-height: 27px;
+    margin-top: 10px;
+}
+.three{
+    margin-top: 10px;
+}
+.three p{
+    line-height: 27px;
+    margin-top: 10px;
+}
+.four{
+    margin-top: 10px;
+}
+.four p{
+    line-height: 27px;
+    margin-top: 10px;
+}
+.five{
+    margin-top: 10px;
+}
+.five p{
+    line-height: 27px;
+    margin-top: 10px;
+}
+.warning{
+    margin-top: 40px;
+}
+.warning p{
+    line-height: 27px;
+    margin-top: 10px;
+}
+.warning strong{
+    font-weight: 600;
+}
+.end{
+    margin-top: 40px;
+}
+.end p{
+    line-height: 27px;
+    margin-top: 10px;
+}
+
